@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select City</title>
+</head>
+<body>
+    <h1>Select City to Sort by Discount</h1>
+    <form action="/sort" method="post">
+        <label for="city">City:</label>
+        <select id="city" name="city">
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Sort</button>
+    </form>
+</body>
+</html>
