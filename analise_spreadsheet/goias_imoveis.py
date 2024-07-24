@@ -3,13 +3,11 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Load the spreadsheet
-file_path = '/home/frederico/Downloads/Lista_imoveis_GO.xlsm'
-cleaned_csv_path = '/home/frederico/Downloads/cleaned_data.csv'
+# Load the cleaned CSV file
+csv_file_path = '/home/frederico/Downloads/cleaned_data.csv'
+df = pd.read_csv(csv_file_path)
 
-df = pd.read_excel(cleaned_csv_path, sheet_name='Lista_imoveis_GO', engine='openpyxl', skiprows=2)
-
-# Rename columns
+# Rename columns if necessary (they should already be clean)
 df.columns = ['N° do imóvel', 'UF', 'Cidade', 'Bairro', 'Endereço', 'Preço', 'Valor de avaliação', 'Desconto', 'Descrição', 'Modalidade de venda', 'Link de acesso']
 
 @app.route('/')
