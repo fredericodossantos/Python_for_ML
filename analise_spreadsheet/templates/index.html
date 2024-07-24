@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select City</title>
+    <title>Sort Data</title>
 </head>
 <body>
-    <h1>Select City to Sort by Discount</h1>
+    <h1>Sort Data</h1>
     <form action="/sort" method="post">
-        <label for="city">City:</label>
-        <select id="city" name="city">
-            {% for city in cities %}
-                <option value="{{ city }}">{{ city }}</option>
-            {% endfor %}
+        <label for="column">Sort by:</label>
+        <select id="column" name="column">
+            <option value="Desconto">Desconto</option>
+            <option value="Preço">Preço</option>
+            <option value="Valor de avaliação">Valor de avaliação</option>
+            <!-- Add other columns here -->
         </select>
         <button type="submit">Sort</button>
     </form>
